@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LYN - Cabinet de Courtage</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+        }
+        .hero { 
+            background: linear-gradient(135deg, #1f295b, #b0a085); 
+            color: white; 
+            padding: 100px 20px; 
+            text-align: center; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero h1 { 
+            font-size: 4em; 
+            margin-bottom: 20px; 
+            font-weight: bold;
+        }
+        .hero h2 { 
+            font-size: 2em; 
+            font-style: italic; 
+            margin-bottom: 30px; 
+            opacity: 0.9;
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        .btn-primary:hover {
+            background: white;
+            color: #1f295b;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .services { 
+            padding: 80px 0; 
+            background: #f8f6f1; 
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #1f295b;
+            margin-bottom: 50px;
+        }
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            margin-top: 50px;
+        }
+        .service-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-icon { 
+            font-size: 3em; 
+            margin-bottom: 20px; 
+        }
+        .service-title {
+            color: #1f295b;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .service-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+        .about {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1f295b, #2a3568);
+            color: white;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .about p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .features {
+            list-style: none;
+        }
+        .features li {
+            padding: 10px 0;
+            font-size: 1.1em;
+            position: relative;
+            padding-left: 30px;
+        }
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #b0a085;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .contact { 
+            background: #1f295b; 
+            color: white; 
+            padding: 80px 0; 
+            text-align: center; 
+        }
+        .contact-info { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 30px; 
+            margin-top: 40px;
+        }
+        .contact-item { 
+            background: rgba(255,255,255,0.1); 
+            padding: 30px; 
+            border-radius: 15px; 
+            transition: transform 0.3s ease;
+        }
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+        .contact-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .contact-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        .contact-item p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero h2 { font-size: 1.5em; }
+            .hero p { font-size: 1.1em; }
+            .about-content { grid-template-columns: 1fr; gap: 40px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 250px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>THE LYN</h1>
+        <h2>"Votre sérénité financière"</h2>
+        <p>Cabinet de Courtage - Votre partenaire de confiance en financement</p>
+        <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary">📞 Nous contacter</a>
+            <a href="#services" class="btn btn-primary">🔍 Nos services</a>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Nos Services de Courtage</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Crédit Immobilier</h3>
+                    <p class="service-desc">Négociation des meilleures conditions pour votre projet immobilier résidentiel ou professionnel. Accompagnement personnalisé de A à Z.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3 class="service-title">Assurance Emprunteur</h3>
+                    <p class="service-desc">Protection optimale avec les meilleures garanties au tarif le plus compétitif du marché. Économisez jusqu'à 50% sur votre assurance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3 class="service-title">Crédit Professionnel</h3>
+                    <p class="service-desc">Financement sur mesure pour le développement de votre entreprise et vos investissements professionnels.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">❤️</div>
+                    <h3 class="service-title">Complémentaire Santé</h3>
+                    <p class="service-desc">Mutuelle santé adaptée à vos besoins avec les meilleures garanties et tarifs négociés auprès de nos partenaires.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3 class="service-title">Assurance Auto / Moto</h3>
+                    <p class="service-desc">Protection complète pour vos véhicules avec des tarifs préférentiels et un service personnalisé de qualité.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏡</div>
+                    <h3 class="service-title">Assurance Habitation</h3>
+                    <p class="service-desc">Sécurisez votre logement et vos biens avec une couverture optimale au meilleur prix du marché.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <h2>L'expertise THE LYN à votre service</h2>
+                    <p>Avec plus de 15 ans d'expérience dans le conseil financier, THE LYN s'impose comme un partenaire de confiance pour particuliers et professionnels.</p>
+                    <p>Notre approche personnalisée et notre réseau d'établissements partenaires nous permettent de vous proposer les solutions les plus adaptées à votre situation et à vos objectifs.</p>
+                </div>
+                <div>
+                    <ul class="features">
+                        <li>Plus de 2000 dossiers traités avec succès</li>
+                        <li>Courtier agréé ORIAS (N° 25002342)</li>
+                        <li>Accompagnement personnalisé de A à Z</li>
+                        <li>Transparence totale sur nos honoraires</li>
+                        <li>Négociation des meilleures conditions</li>
+                        <li>Suivi personnalisé jusqu'à la signature</li>
+                        <li>Conseil expert et objectif</li>
+                        <li>Réactivité et disponibilité</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact" id="contact">
+        <div class="container">
+            <h2 style="font-size: 2.5em; margin-bottom: 20px;">Contactez-nous</h2>
+            <p style="font-size: 1.2em; margin-bottom: 40px;">Prêt à concrétiser votre projet ? Parlons-en ensemble.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h3>Téléphone</h3>
+                    <p>01 88 31 58 76</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>contact@thelyn.fr</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Adresse</h3>
+                    <p>50 Avenue des Champs-Élysées<br>75008 PARIS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p><strong>THE LYN</strong> - Cabinet de Courtage</p>
+            <p style="font-style: italic; margin: 10px 0;">"Votre sérénité financière"</p>
+            <p>© 2025 THE LYN. Tous droits réservés. | ORIAS N° 25002342</p>
+        </div>
+    </div>
+</body>
+</html>
